@@ -21,9 +21,9 @@
      <ul class="nav navbar-nav navbar-right">
 
        <li>
-         <button class="btn btn-form btn-small">
-           <%= link_to "Sell your food now!", new_food_path, style: "color: white; text-decoration: none;" %>
-         </button>
+         <!--button class="btn btn-form btn-small"-->
+           <%= link_to "Sell your food now!", new_food_path, class: "btn btn-form btn-small", style: "color: white; text-decoration: none;" %>
+         <!--/button-->
        </li>
 
         <% if (!user_signed_in?) %>
