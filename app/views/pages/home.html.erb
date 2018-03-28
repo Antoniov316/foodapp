@@ -7,10 +7,10 @@
 </div>
 
 
-<%= form_tag search_path, method: :get do %>
+<%= form_tag search_path, method: :get, :remote=>true do %>
   <div class="row">
     <div class="col-md-6">
-      <%= text_field_tag :search, params[:search], placeholder: "Where are you located?", class: "form-control", id: "autolocation" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Where are you located?", class: "form-control autolocation" %>
     </div>
 
 
@@ -62,9 +62,11 @@
 </div>
 
 <script>
-
-
   $(function() {
-    $("#autolocation").geocomplete();
+    $(".autolocation").geocomplete();
   })
+
 </script>
+
+
+

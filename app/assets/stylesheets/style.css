@@ -1,0 +1,323 @@
+.nav_sec {
+    position: relative;
+}
+.inner_nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5px;
+}
+.log_img img {
+    width: 12%;
+}
+.login_sec {
+    text-align: right;
+    line-height: 70px;
+}
+.log_btn {
+    padding-right: 25px;
+}
+.pan_name_img img {
+    width: 30%;
+}
+
+.carousel-indicators {
+  
+    left: 53.5%;
+   
+}
+.sign_btn {
+    padding-right: 50px;
+}
+.banner_sec {
+    background-image: url(banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.banner_sec_inn {
+    text-align: center;
+   padding-top: 80px;
+    padding-bottom: 70px;
+}
+.baner_txt {
+    color: #fff;
+}
+.baner_txt h4 {
+    font-size: 36px;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 600;
+    opacity: 0.5;
+}
+.baner_txt h1 {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.free_acc {
+    margin: 50px 0;
+}
+.face_icon {
+    padding-right: 30px;
+}
+.btn_banner .free_acc a {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 11px 50px;
+    font-size: 26px;
+    border-radius: 50px;
+}
+.btn_banner .btn_facc a {
+    background-color: #fff;
+    padding: 18px 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #54a3a3;
+}
+face_icon {
+    margin-right: 20px;
+}
+.cook_shar {
+    padding-top: 30px;
+}
+.cook_shar img {
+    width: 25%;
+}
+.how_inn_sec {
+    text-align: center;
+}
+.title_how h2 {
+    font-size: 60px;
+    font-weight: 600;
+}
+.border_bot {
+    border: 1px solid #f57365;
+    width: 25%;
+    margin: 20px auto 0;
+}
+.how_box h3 {
+    font-size: 18px;
+    font-weight: 600;
+}   
+.how_box p {
+    font-size: 16px;
+}
+.how_sec {
+    padding: 40px 0;
+}
+.how_main_box {
+    padding-top: 30px;
+}
+.inn_mob_sec .border_bot {
+    border: 1px solid #f57365;
+    width: 25%;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+.inn_mb_txt p {
+    font-size: 16px;
+    line-height: 25px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.mob_sec {
+    padding-top: 70px;
+    background-color: #f7f7f7;
+}
+
+.title_blog h3 {
+    font-size: 36px;
+    color: #53a2a2;
+}
+
+
+
+/*-------------------------------*/
+/*      Code snippet by          */
+/*      @maridlcrmn              */
+/*-------------------------------*/
+#carousel {
+    background-image:url(test_bg.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center center;
+    padding: 80px 0 50px;
+}
+.carousel-inner blockquote {
+    padding: 50px 0 0;
+    color:#fff;
+}
+.carousel-inner blockquote p {
+    font-size: 30px;
+    opacity: 0.5;
+}
+.btn_acc:hover,.facc_btn:hover {
+    background: #459085 !important;
+    text-decoration: none;
+    color:#fff !important;
+    cursor:pointer;
+}
+.carousel-inner  h5 {
+  
+    opacity: 0.5;
+}
+
+section {
+    xpadding-top: 100px;
+    xpadding-bottom: 100px;
+}
+
+.quote {
+    color: rgba(0,0,0,.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/*-------------------------------*/
+/*    Carousel Fade Transition   */
+/*-------------------------------*/
+
+#fade-quote-carousel.carousel {
+  padding-bottom: 60px;
+}
+#fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-indicators {
+  bottom: 10px;
+}
+#fade-quote-carousel.carousel .carousel-indicators > li {
+  background-color: #fff;
+  border: none;
+}
+#fade-quote-carousel blockquote {
+    text-align: center;
+    border: none;
+}
+#fade-quote-carousel .profile-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 100px;
+}
+.bolg_box .img {
+    width: 100%;
+}
+.bolg_box h3 {
+    margin: 5px 0;
+    font-weight: 600;
+}
+.star_ite i {
+    color: #398287;
+}
+.footer_sec {
+    background-image: url(test_bg.png);
+    height: 400px;
+    background-position: center center;
+}
+.blog_sec {
+    padding: 50px 0 60px;
+}
+.inner_nav a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 0.5;
+}
+.blog_sec .title_blog h3 {
+    margin-bottom: 50px;
+}
+
+@media (min-width:280px) and (max-width:767px){
+    .pan_name_img img {
+    width: 100%;
+    padding-top: 30px;
+}
+.log_img {
+    text-align: center;
+}
+.login_sec {
+    text-align: center;
+    line-height: 100px;
+}
+.baner_txt h1 {
+    
+    font-size: 25px;
+}
+.baner_txt h4 {
+    font-size: 22px;
+}
+.btn_banner .free_acc a {
+    font-size: 14px;
+}
+.btn_banner .btn_facc a {
+    padding: 18px 30px;
+    font-size: 13px;
+}
+.cook_shar img {
+    width: 80%;
+}
+.title_how h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.title_how h3 {
+    text-align: center;
+    font-size: 18px;
+}
+.inn_mob_sec .border_bot {
+    border: 1px solid #f57365;
+    width: 25%;
+    margin: 0 auto;
+}
+#img-mob-res{
+    width:100% !important;
+    }
+.inn_mb_txt p {
+    font-size: 13px;
+    line-height: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.btn_app {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.carousel-inner blockquote p {
+    font-size: 15px;
+}
+.blog_sec .title_blog h3 {
+    margin-bottom: 30px;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0;
+}
+.log_img img {
+    width: 24%;
+    margin-top: 5px;
+}
+
+.baner_txt h1 {
+    
+    font-size: 40px;
+   
+}
+
+}
+

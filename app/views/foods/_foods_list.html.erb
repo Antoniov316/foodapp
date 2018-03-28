@@ -22,11 +22,11 @@
     </div>
 
     <script>
-         $('#star_<%= food.id %>').raty({
-           path: '/assets',
-           readOnly: true,
-           score: <%= food.average_rating %>
-         });
-       </script>
+       $('#star_<%= food.id %>').raty({
+         path: '/assets',
+         readOnly: true,
+         score: <%= food.average_rating %>
+       });
+     </script>
 
 <% end %>

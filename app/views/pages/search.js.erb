@@ -1,2 +1,11 @@
-$('#food_listing').html('<%= j render partial: "foods/foods_list", locals: {foods: @arrFoods} %>')
+// $('#food_listing').html('<%= j render partial: "foods/foods_list", locals: {foods: @arrFoods} %>')
+
+<% if params[:search].present?%>
+  $(".search_food").html('<%= j render partial: "search", locals: {foods: @arrFoods} %>')
+  initialize(<%= raw @arrFoods.to_json %>)
+<%end%>
+
 initialize(<%= raw @arrFoods.to_json %>)
+$("#food_listing").html('<%= j render partial: "foods/foods_list", locals: {foods: @arrFoods} %>');
+
+

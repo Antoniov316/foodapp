@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.min.js
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui/datepicker
@@ -21,6 +22,8 @@
 //= require card
 //= require bootstrap-datepicker
 //= require cable
+//= require bootstrap.min.js
+//= require owl.carousel
 //= require_tree .
 
 
@@ -32,3 +35,8 @@ function onRemoveProduct(name)
  		window.location.href = "/remove_product_from_session?name="+name;
     }
 }
+
+$(function() {
+	$(".autolocation").geocomplete();
+})
+
