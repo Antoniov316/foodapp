@@ -22,9 +22,8 @@
 //= require card
 //= require bootstrap-datepicker
 //= require cable
-//= require bootstrap.min.js
 //= require owl.carousel
-//= require_tree .
+
 
 
 function onRemoveProduct(name)
