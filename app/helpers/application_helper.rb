@@ -62,7 +62,8 @@ module ApplicationHelper
   end
 
   def get_notification_count(current_user) 
-    Notification.where(recipient_id: current_user.id, read: false).count
+    n = Notification.where(recipient_id: current_user.id, read: false).count rescue 0
+    m = current_user.messages.where(status: false).count rescue 0
+    return (m + n)
   end  
-
 end

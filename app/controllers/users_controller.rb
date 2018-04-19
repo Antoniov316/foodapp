@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.except_user(current_user)
+    @message = Message.new
   end
 
   def show
@@ -142,7 +143,23 @@ end
   def thanks
 
   end
- 
+
+  def followed
+    followed_user = Follower.where(user_id: params[:user_id], follower_id: current_user.id).first
+    if followed_user.present?
+      if followed_user.status == true
+        followed_user.update(status: false)
+      else
+        followed_user.update(status: true)
+      end 
+    else 
+      follow = Follower.create(user_id: params[:user_id], follower_id: current_user.id, status: true)
+    end
+    redirect_to :back
+  end  
+
+
+
   private
 
 

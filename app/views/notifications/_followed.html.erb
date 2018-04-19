@@ -1,4 +1,6 @@
 <div class="text-babu">
   <span class="glyphicon glyphicon-bell fa-2x"></span>
-  <span class="badge"><%= current_user.count_unread_messages %></span>
+  <span class="badge">
+    <%= get_notification_count(current_user)  %>
+  </span>
 </div>

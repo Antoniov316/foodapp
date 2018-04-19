@@ -92,5 +92,6 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   get 'users/:id/new_message' ,to: 'messages#new_message', as: 'new_message'
   resources :messages, only:[:create, :index]
+  post '/followed' ,to: 'users#followed', as: 'followed'
 
 end

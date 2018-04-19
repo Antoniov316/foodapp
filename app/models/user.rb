@@ -16,6 +16,7 @@ class User < ApplicationRecord
          scope :except_user, ->(current_user) { where.not(id: current_user) }
          has_many :chatrooms
          has_many :notifications, as: :recipient
+         has_many :followers
          def self.from_omniauth(auth)
            user = User.where(email: auth.info.email).first
 
