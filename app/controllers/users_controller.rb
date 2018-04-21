@@ -149,11 +149,14 @@ end
     if followed_user.present?
       if followed_user.status == true
         followed_user.update(status: false)
+        flash[:error] = "Unfollowed Successfully"
       else
         followed_user.update(status: true)
+        flash[:success] = "Successfully Following"
       end 
     else 
       follow = Follower.create(user_id: params[:user_id], follower_id: current_user.id, status: true)
+      flash[:success] = "Successfully Following"
     end
     redirect_to :back
   end  

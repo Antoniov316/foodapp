@@ -65,8 +65,12 @@ class User < ApplicationRecord
           payment_setting.stripe_user_id rescue nil
         end
 
-          def count_unread_messages
-            messages.where(status: false).count rescue 0
-          end
+        def count_unread_messages
+          messages.where(status: false).count rescue 0
+        end
+
+        def is_following? user_id
+          Follower.where(user_id: user_id, follower_id: id, status: true).present?
+        end
 
       end

@@ -25,30 +25,36 @@
     <hr/>
 
     <!-- Room Info -->
+    <% status = (current_user && (@food.id == current_user.id))%>
+    <% is_following = current_user.is_following?(@food.user_id) %>
     <div class="row text-babu">
       <div class="row text-center row-space-1">
-        <div class="col-md-3">
+        <div class="col-md-<%= status ? 3 : 2 %>">
+          <i class="fa fa-cutlery fa-2x"></i>
+        </div>
+        <div class="col-md-<%= status ? 3 : 2 %>">
           <i class="fa fa-cutlery fa-2x"></i>
         </div>
         <div class="col-md-3">
           <i class="fa fa-cutlery fa-2x"></i>
         </div>
-        <div class="col-md-3">
-          <i class="fa fa-cutlery fa-2x"></i>
-        </div>
-        <% unless current_user && (@food.id == current_user.id) %>
-          <div class="col-md-3">
+        <% unless status %>
+          <div class="col-md-2">
             <%= link_to "<i class='fa fa-comments fa-2x'></i>".html_safe, new_message_path(@food.user_id) %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to "<i class='fa fa-user-#{is_following ? 'times' : 'plus'} fa-2x'></i>".html_safe, followed_path(user_id:  @food.user), method: :post %>
           </div>
         <% end %>
       </div>
 
       <div class="row text-center">
-        <div class="col-md-3"><%= @food.cuisine_type %></div>
-        <div class="col-md-3"><%= @food.entree_type %></div>
+        <div class="col-md-<%= status ? 3 : 2 %>"><%= @food.cuisine_type %></div>
+        <div class="col-md-<%= status ? 3 : 2 %>"><%= @food.entree_type %></div>
         <div class="col-md-3"><%= @food.portions_available %> Portions Available</div>
-        <% unless current_user && (@food.id == current_user.id) %>
-          <div class="col-md-3">Chat</div>
+        <% unless status %>
+          <div class="col-md-2">Chat</div>
+          <div class="col-md-3"><%= is_following ? "Unfollow" : "Follow" %> this chef</div>
         <% end %>
       </div>
 
