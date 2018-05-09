@@ -23,7 +23,8 @@
 //= require bootstrap-datepicker
 //= require cable
 //= require owl.carousel
-
+//= require geocomplete
+//= require jquery.raty
 
 
 function onRemoveProduct(name)

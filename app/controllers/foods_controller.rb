@@ -7,7 +7,7 @@ class FoodsController < ApplicationController
   end
 
   def new
-    check_stripe_connected
+    #check_stripe_connected
     @food = current_user.foods.build
   end
 
