@@ -29,6 +29,14 @@ class MessagesController < ApplicationController
   def read_notification
     @notifications = Notification.where(recipient_id: current_user.id,read: false)
     @notifications.update_all(read: true)    
-  end  
+  end
+
+  def notifications
+    @chatrooms = Chatroom.where("(user_id =?) OR (sender_id=?)",current_user,current_user)
+    @notifications = Notification.where(recipient_id: current_user.id, notification: "food").order("id DESC")
+    @unread_notifications = @notifications.where(read: false)
+    @unread_notifications_ids = @unread_notifications.pluck(:id)
+    @unread_notifications = @unread_notifications.update_all(read: true)
+  end
 
 end

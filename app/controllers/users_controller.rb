@@ -133,6 +133,7 @@ def process_payment
           order_item.save!
         end
         order.send_notification_to_sellers
+        order.send_notification_to_food_owner(current_user)
         session[:cart_obj] = nil
         session[:card_params] = nil
         redirect_to '/payment-thanks'

@@ -1,6 +1,20 @@
-<div class="text-babu">
-  <span class="glyphicon glyphicon-bell fa-2x"></span>
-  <span class="badge">
-    <%= get_notification_count(current_user)  %>
-  </span>
-</div>
+<li class="dropdown">
+  <a href="<%= messages_path %>"  id="notifications">
+    <div class="text-babu">
+      <span class="glyphicon glyphicon-comment fa-2x"></span>
+      <span class="badge">
+        <%= count_unread_messages(current_user)  %>
+      </span>
+    </div>
+  </a>
+</li>
+<li class="dropdown">
+  <a href="<%= notifications_path %>"  id="notifications">
+    <div class="text-babu">
+      <span class="glyphicon glyphicon-bell fa-2x"></span>
+      <span class="badge">
+        <%= count_unread_notifications(current_user)  %>
+      </span>
+    </div>
+  </a>
+</li>

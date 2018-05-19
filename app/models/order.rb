@@ -38,17 +38,26 @@ class Order < ApplicationRecord
       end
     rescue
     end
-  end
+  end 
 
   def get_sellers_list
     user_ids =  order_foods.map(&:food).flatten.compact.map(&:user_id).uniq rescue []
     return User.where(id: user_ids)
   end
 
+
+
   def get_food_names(user_id)
     string = ""
     user = User.find_by_id user_id
     order_foods.where(food_id: user.foods.map(&:id) ).map(&:food).map{|c| string << "#{c.entree_type}, " } 
     return string
+  end
+
+  def send_notification_to_food_owner(current_user)
+    users =  get_sellers_list
+    users.each do |user|
+      Notification.create(user_id: current_user.id, recipient_id: user.id , read: false, notification: 'food', order_id: self.id, message: "Order received!!!")
+    end
   end
 end

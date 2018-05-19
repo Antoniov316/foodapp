@@ -1,0 +1,24 @@
+<div class="col-md-12">
+  <h2>Notifications:</h2> 
+  <div class="panel panel-default">
+    <div class="panel-body message-box">
+      <% @notifications.last(10).each do |notification| %>
+        <div class="pull-right">
+          <%= notification.timestamp rescue nil %><br><br>
+        </div>
+        <img src="/assets/dummy.jpg" class="img-circle" alt="Cinque Terre">
+        <% if @unread_notifications_ids.include? notification.id %>
+          <div class="unread-button">
+            !
+          </div>
+        <% end %><br><br>
+        <% if notification.order_id.present? %>
+          <%= link_to "#{notification.message rescue nil}", meals_sold_path %>
+        <% else %>
+          <%= link_to "#{notification.message rescue nil}", food_path(notification.food_id) %>
+        <% end %>
+        <br><hr>
+      <% end %>
+    </div> 
+  </div>
+</div>

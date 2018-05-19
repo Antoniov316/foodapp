@@ -12,7 +12,7 @@ class FoodieReviewsController < ApplicationController
     #                ).first
     @order_food = OrderFood.find_by_id(foodie_review_params[:order_food_id])
 
-    if !@order_food.nil? && @order_food.food_id == foodie_review_params[:chef_id].to_i
+    if !@order_food.nil? #&& @order_food.food_id == foodie_review_params[:chef_id].to_i
 
       @has_reviewed = FoodieReview.where(
                         order_food_id: @order_food.id,

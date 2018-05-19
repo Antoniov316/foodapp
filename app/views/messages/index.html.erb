@@ -1,48 +1,27 @@
 <div class="col-md-12">
-  <div class="col-md-6">
-    <h2>Messages:</h2>
-    <div class="panel panel-default">
-      <div class="panel-body message-box">
-        <% @chatrooms.each do |chatroom| %>
-          <% if chatroom.messages.present? %>
-            <a href="<%= new_message_path(chatroom.sender_or_receiver_id(current_user)) %>">
-              <div class="pull-right">
-                <%= chatroom.last_message.timestamp rescue nil %><br><br>
-              </div>
-              <div class="">
-                <img src="/assets/dummy.jpg" class="img-circle" alt="Cinque Terre">
-                <%= chatroom.get_receiver_name(current_user) %>
-                <% unread = chatroom.messages.unread(chatroom.id,current_user.id).count rescue nil %>
-                <% if ((unread || 0) > 0)%>
-                  <div class="unread-button">
-                    <%= unread  %>
-                  </div>
-                <% end %>
-              </div><br>
-              <%= chatroom.last_message.try(:body) rescue nil %></span><hr>
-            </a>
-          <% end %>
-        <% end %>
-      </div> 
-    </div>
-  </div>
-  <div class="col-md-6">
-    <h2>Notifications:</h2> 
-    <div class="panel panel-default">
-      <div class="panel-body message-box">
-        <% @notifications.last(10).each do |notification| %>
-          <div class="pull-right">
-            <%= notification.timestamp rescue nil %><br><br>
-          </div>
-          <img src="/assets/dummy.jpg" class="img-circle" alt="Cinque Terre">
-          <% if @unread_notifications_ids.include? notification.id %>
-            <div class="unread-button">
-              !
+  <h2>Messages:</h2>
+  <div class="panel panel-default">
+    <div class="panel-body message-box">
+      <% @chatrooms.each do |chatroom| %>
+        <% if chatroom.messages.present? %>
+          <a href="<%= new_message_path(chatroom.sender_or_receiver_id(current_user)) %>">
+            <div class="pull-right">
+              <%= chatroom.last_message.timestamp rescue nil %><br><br>
             </div>
-          <% end %><br><br>
-          <%= link_to "#{notification.message rescue nil}", food_path(notification.food_id) %><br><hr>
+            <div class="">
+              <img src="/assets/dummy.jpg" class="img-circle" alt="Cinque Terre">
+              <%= chatroom.get_receiver_name(current_user) %>
+              <% unread = chatroom.messages.unread(chatroom.id,current_user.id).count rescue nil %>
+              <% if ((unread || 0) > 0)%>
+                <div class="unread-button">
+                  <%= unread  %>
+                </div>
+              <% end %>
+            </div><br>
+            <%= chatroom.last_message.try(:body) rescue nil %></span><hr>
+          </a>
         <% end %>
-      </div> 
+      <% end %>
     </div>
   </div>
-</div>  
+</div>

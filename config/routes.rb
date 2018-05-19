@@ -81,7 +81,7 @@ Rails.application.routes.draw do
    get 'payment-thanks', to: 'users#thanks', as: 'payment_thanks'
 
   get '/read_notification', to: 'messages#read_notification', as: 'read_notification'
-
+  get '/notifications', to: 'messages#notifications', as: 'notifications'
   resource :payment_setting, only: :show do
     member do
       get :connect_with_stripe

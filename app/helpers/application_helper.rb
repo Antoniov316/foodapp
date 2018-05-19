@@ -61,9 +61,11 @@ module ApplicationHelper
               opts
   end
 
-  def get_notification_count(current_user) 
-    n = Notification.where(recipient_id: current_user.id, read: false, notification: "food").count rescue 0
-    m = current_user.messages.where(status: false).count rescue 0
-    return (m + n)
-  end  
+  def count_unread_messages(current_user)
+    current_user.messages.where(status: false).count rescue 0
+  end
+
+  def count_unread_notifications(current_user)
+    Notification.where(recipient_id: current_user.id, read: false, notification: "food").count rescue 0
+  end
 end
