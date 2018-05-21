@@ -47,21 +47,23 @@
            </li>
         <% end %>
       </ul>
-      <ul class="nav navbar-nav navbar-right" id="notifications">
-        <%= render partial: "notifications/followed" %>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <% if products_in_cart %>
+      <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right" id="notifications">
+          <%= render partial: "notifications/followed" %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if products_in_cart %>
+              <button class="btn btn-form btn-small">
+                 <%= link_to "My Cart (#{session[:cart_obj].size})", '/my_cart' , style: "color: white; text-decoration: none;" %>
+              </button>
+            <%end %>
             <button class="btn btn-form btn-small">
-               <%= link_to "My Cart (#{session[:cart_obj].size})", '/my_cart' , style: "color: white; text-decoration: none;" %>
+              <%= link_to "Sell your food now!", new_food_path, style: "color: white; text-decoration: none;" %>
             </button>
-          <%end %>
-          <button class="btn btn-form btn-small">
-            <%= link_to "Sell your food now!", new_food_path, style: "color: white; text-decoration: none;" %>
-          </button>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      <% end %>
    </div><!--/.nav-collapse -->
  </div>
 </nav>
