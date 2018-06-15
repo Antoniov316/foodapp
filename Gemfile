@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.0.3'
+gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -14,11 +15,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'redis', '~> 3.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "letter_opener", :group => :development
 end
 
 group :development do
@@ -26,7 +25,6 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'sqlite3'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -59,11 +57,3 @@ gem 'stripe'
 gem 'rails-assets-card', source: 'https://rails-assets.org'
 
 gem 'omniauth-stripe-connect', '~> 2.10.0'
-gem 'oauth2'
-gem 'stripe'
-
-
-group :production do
-  # gem 'pg', '0.18.1'
-  gem 'rails_12factor'
-end
